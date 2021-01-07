@@ -117,7 +117,7 @@ Assuming you named your image asset `test-image.jpg`, click the *Download* butto
 You should see something similar to the following.
 
 ----
-https://raw.githubusercontent.com/JoeArauzo/Assets-Template/main/images/test-image.jpg
+https://raw.githubusercontent.com/{github_user_name}/assets/main/images/test-image.jpg
 ----
 
 You can now use this URL within your article to render the image inline.  Enjoy!
