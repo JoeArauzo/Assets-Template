@@ -1,19 +1,18 @@
-= AsciiDoc README Template
+= Assets
 :doctype: article
-:description: A README template written in AsciiDoc markup
+:description: A GitHub repository for hosting assets online
 :license-type: <enter license type>
 :author: Author Name 
 :email: author.name@domain.com
 :revnumber: v0.1
 :revdate: 2021-01-01
-:repository-url: https://github.com/JoeArauzo/AsciiDoc-README-Template
-:documentation-url: https://asciidoctor.org/docs/asciidoc-writers-guide/
+:repository-url: https://github.com/JoeArauzo/Assets-Template
 :source-highlighter: rouge
 :rouge-style: github
 :!showtitle:
 :icons: font
 :toc: preamble
-:imagesdir: assets/images
+:imagesdir: images
 
 
 // GitHub doesn't render asciidoc exactly as intended, so we adjust settings and utilize some html
@@ -31,23 +30,15 @@ ifdef::env-github[]
 <p align="center">
   
   <!-- REPLACE THE FOLLOWING URL WITH YOUR REPOSITORY'S URL -->
-  <a href="https://github.com/JoeArauzo/AsciiDoc-README-Template">
+  <a href="https://github.com/JoeArauzo/Assets-Template">
     
     <!-- REPLACE THE PLACEHOLDER LOGO WITH YOUR OWN LOGO AND ADJUST THE SIZE ACCORDINGLY -->
-    <img src="assets/images/placeholder-logo.png" alt="Logo" width="30%" height="30%"></a>
-  
-  <!-- REPLACE THE FOLLOWING WITH YOUR REPOSITORY/PROJECT TITLE -->
-  <h3 align="center">AsciiDoc README Template</h3>
+    <img src="images/readme-logo.png" alt="Logo" width="50%" height="30%"></a>
   
   <p align="center">
   
     <!-- REPLACE THE FOLLOWING WITH YOUR REPOSITORY/PROJECT'S SHORT DESCRIPTION -->
-    A README template written in AsciiDoc markup
-  
-    <br>
-    
-    <!-- REPLACE THE FOLLOWING URL WITH YOUR REPOSITORY'S DOCUMENTATION URL -->
-    <a href="https://asciidoctor.org/docs/asciidoc-writers-guide/"><strong>Explore the docs »</strong></a>
+    A GitHub repository for hosting assets online
     
   </p>
 </p>
@@ -59,14 +50,10 @@ endif::[]
 
 // This conditional section applies to all environments, except GitHub
 ifndef::env-github[]
-image::placeholder-logo.png[Logo, align=center, width=30%]
-[.text-center]
-[.lead]
-*{doctitle}*
+image::readme-logo.jpg[Logo, align=center, width=50%]
 
 [.text-center]
 _{description}_ +
-{documentation-url}[Explore the docs »]
 endif::[]
 
 
