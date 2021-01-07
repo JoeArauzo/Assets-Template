@@ -33,7 +33,7 @@ ifdef::env-github[]
   <a href="https://github.com/JoeArauzo/Assets-Template">
     
     <!-- REPLACE THE PLACEHOLDER LOGO WITH YOUR OWN LOGO AND ADJUST THE SIZE ACCORDINGLY -->
-    <img src="images/readme-logo.png" alt="Logo" width="50%" height="30%"></a>
+    <img src="images/readme-logo.jpg" alt="Logo" width="50%" height="30%"></a>
   
   <p align="center">
   
