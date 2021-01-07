@@ -1,11 +1,11 @@
 = Assets
 :doctype: article
 :description: A GitHub repository for hosting assets online
-:license-type: <enter license type>
-:author: Author Name 
-:email: author.name@domain.com
-:revnumber: v0.1
-:revdate: 2021-01-01
+:license-type: Apache-2.0
+:author: Joe Arauzo
+:email: joe@arauzo.net
+:revnumber: v1.0.0
+:revdate: 2021-01-07
 :repository-url: https://github.com/JoeArauzo/Assets-Template
 :source-highlighter: rouge
 :rouge-style: github
@@ -58,267 +58,74 @@ endif::[]
 
 
 == Background
-A GitHub repository can be used to host assets, such as images. As an example, one use case is if you would like to includes images in an article, posted as a GitHub Gist. The gist can be written in any markup supported, such as AsciiDoc or markdown. The image you want to display within the article can be referenced in the markup via a URL. The following provides instructions for how to host your images on GitHub for free.
+If you prefer to use Github Gists as way to publish How-To articles, you've already realized you can author your articles in any markup languge https://github.com/github/markup#markups[supported by GitHub]. Many just getting started prefer using Markdown because it is easy to learn. I personally prefer https://asciidoctor.org/[AsciiDoc] because it's just as easy to learn and offers the ability to do things Markdown simply can't.  For example, nested tables, includes, CSV imports, just to name a few. Or perhaps you'd like to take the same article you already wrote and be able to export it as a PDF or EPUB, with many options for customizing the format.  With AsciiDoc and something like https://antora.org/[Antora], you can even create whole https://docs.antora.org/[documentation websites]. If you have plans or aspirations to do any of these things, you can choose to learn AsciiDoc and be able to do them all by using a single markup language. +
+
+While it is technically possible to upload an image file to a gist, it doesn't offer a way to use the image inline within your article. And I'm sure you can agree, a complex How-To article without any images can be pretty boring. A picture is worth a thousand words. So one approach is to setup a GitHub repository dedicated to centrally hosting assets such as images. Those images can then be referenced via URLs in your How-To article, or anything else for that matter. The following provides instructions for how to host your images on GitHub for _free_.
+
 
 == Getting Started
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
-
-
-=== Prerequisites
-Select the prequisites procedure which aligns with your operating system of choice.
-
-==== Installing _Git_ on _Linux_
-Determine on *which _Linux_ distribution* your system is  ased on.  See http://en.wikipedia.org/wiki/List_of_Linux_distributions[List of Linux distributions -- Wikipedia] -- for a list. *Most _Linux_ systems -- including _Ubuntu_ -- are _Debian_-based.*
-
-===== _Debian_-based linux systems
-https://help.ubuntu.com/community/UsingTheTerminal[*Open a terminal window*]. *Copy & paste the following* into the terminal window and *hit* `Return`. You may be prompted to enter your password.
+To get started, you simply need to clone this repository. I recommend naming your repository something short and sweet, like `assets`.
 
 [source,bash]
 ----
-sudo apt update
-sudo apt upgrade
-sudo apt install git
-----
-
-*You can use _Git_ now.*
-
-====== _Red Hat_-based linux systems
-*Open a terminal. Copy & paste the following* into the terminal window and *hit* `Return`. You may be prompted to enter your password.
-
-[source,bash]
-----
-sudo yum upgrade
-sudo yum install git
-----
-
-*You can use _Git_ now.*
-
-==== Installing _Git_ on _macOS_
-https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/2.11/mac/11.0[Open a terminal window].
-
-===== Step 1 -- Install http://brew.sh/[_Homebrew_]
-[NOTE]
-_Homebrew_ [...] simplifies the installation of software on the macOS operating system.
-
-*Copy & paste the following* into the terminal window and *hit* `Return`.
-
-[source,bash]
-----
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-----
-
-You will be offered to install the _Command Line Developer Tools_ from _Apple_. *Confirm by clicking _Install_*. After the installation finished, continue installing _Homebrew_ by *hitting* `Return` again.
-
-===== Step 2 -- Install _Git_
-*Copy & paste the following* into the terminal window and *hit* `Return`.
-
-[source,bash]
-----
-brew install git
+git clone https://github.com/JoeArauzo/Assets-Template.git assets
 ----
 
 [NOTE]
-If you prefer the version of git included with Apple's Command Line Tools for Xcode, you can choose to skip installing git using _Homebrew_.
-
-*You can use _Git_ now.*
-
-==== Installing _Git_ on _Windows_
-https://adamtheautomator.com/how-to-run-powershell-as-administrator/[Open PowerShell as Administrator].
-
-===== Step 1 -- Install https://chocolatey.org/[_Chocolatey_]
-[NOTE]
-_Chocolatey_ is a software management for Windows. It brings the concepts of true package management to allow you to version things, manage dependencies and installation order, better inventory management, and other features.
-
-*Copy & paste the following* into the _PowerShell_ window and *hit* `Return`.
-
-[source,powershell]
-----
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-----
-
-Wait a few seconds for the command to complete. If you don't see any errors, you are ready to use Chocolatey.
-
-===== Step 2 -- Install _Git_
-*Copy & paste the following* into the _PowerShell_ window and *hit* `Return`.
-
-[source,powershell]
-----
-choco install -y git
-----
-
-*You can now use _Git_ via launching the _Git BASH_ terminal for _Windows_.*
-
-
-=== Installation
-This repository is published as a template repository, hosted on GitHub. The branches within this repository include a _boilerplate_ README, as well as a _placeholder_ README, for your convenience.  To ensure you repository includes these convenience branches, you'll need create your repository from within the GitHub website.
-[TIP]
-While it is possible to create a repository from a template using the GitHub CLI, it currently does not support including all branches.  For more information, see `gh repo create` in the https://cli.github.com/manual/gh_repo_create[GitHub CLI documentation].
-
-. On GitHub, navigate to the main page of https://github.com/JoeArauzo/readme-private-adoc-template-2[this repository]. 
-. Above the file list, click *Use this template*.
-+
-[.thumb]
-image::https://docs.github.com/assets/images/help/repository/use-this-template-button.png[Use this template button, 683]
-
-. Use the *Owner* drop-down menu, and select the account you want to own the repository.
-+
-[.thumb]
-image::https://docs.github.com/assets/images/help/repository/create-repository-owner.png[Owner drop-down menu, 683]
-
-. Type a name for your repository, and an optional description.
-+
-[.thumb]
-image::https://docs.github.com/assets/images/help/repository/create-repository-name.png[Create repository field, 683]
-
-. Choose a repository visibility. For more information, see https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-repository-visibility[About repository visibility].
-+
-[.thumb]
-image::https://docs.github.com/assets/images/help/repository/create-repository-public-private.png[Radio buttons to select repository visibility, 683]
-
-. To include the directory structure and files from all branches in the template, *YOU MUST* select *Include all branches*.
-+
-[.thumb]
-image::https://user-images.githubusercontent.com/4857257/103178810-2b338880-483b-11eb-96ca-4a11c7845ca5.png[Include all branches checkbox, 683]
-
-. Click *Create repository from template*.
-
-. On GitHub, navigate to the main page of the repository.
-
-. Above the list of files, click image:https://user-images.githubusercontent.com/4857257/103178808-2a025b80-483b-11eb-8005-f208943fe283.png[Download, 16, 16] *Code*.
-+
-
-image::https://docs.github.com/assets/images/help/repository/code-button.png[Code, 450]
-
-. To clone the repository using HTTPS, under "Clone with HTTPS", click image:https://user-images.githubusercontent.com/4857257/103178809-2a9af200-483b-11eb-937f-519d3c97a852.png[Copy, 16] to copy the URL.
-+
-[.thumb]
-image::https://docs.github.com/assets/images/help/repository/https-url-clone-cli.png[Copy URL, 450]
-
-. Launch your terminal.
-
-. Change the current working directory to the location where you want the cloned directory.
-
-. Type `git clone `, and then paste the URL you copied earlier
-+
-[source,bash]
-----
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-----
-
-. Press *Enter* to create your local clone.
-+
-[source,bash]
-----
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `Spoon-Knife`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-----
-
+The repository you've just created needs to be a public repository in order for this to work.
+ 
 
 == Usage
-Once a new repository is created from this template, the boilerplate readme is displayed on the `main` branch.  This repository also includes the following two branches for convenience.
+Once you have a local copy of your repository, you can begin hosting image assets by simply copying files into your directory of choice, followed by pushing the repo back to GitHub. +
+This repo includes a directory named `images` by default. The logo at the top of this README is an example of an image asset stored in the repo.
 
-* *docs/readme-boilerplate*
-** This branch includes an example of what a typical readme might look like.
-** This has already been merged into `main`, and is what you're reading now.
-** You'll likely want to create a branch from this so you can author your own custom readme.
-* *docs/readme-placeholder*
-** This branch includes an example of what a placeholder readme might look like.
-** A placeholder readme is usually displayed until the actual readme is ready to be published.
-** The use of a placeholder readme is a good practice to provide visitors to your repsository with a hint of what's to come.
+[source]
+----
+└── assets
+    ├── CHANGELOG.adoc
+    ├── LICENSE
+    ├── images
+    │   └── readme-logo.jpg
+    └── readme.adoc
 
-=== Placeholder Readme
-. Launch your terminal.
-. Change the current working directory to the location where you already cloned the repository.
-. *Copy & paste the following* into the terminal window and *hit* `Return`.
-+
-[source,bash]
 ----
-git checkout docs/readme-placeholder
-git checkout main
-git rm readme.adoc
-git clean -f .
-git commit -m 'DOCS(readme):  purge boilerplate'
-git merge docs/readme-placeholder -m 'DOCS(readme):  stage placeholder' --allow-unrelated-histories
+
+As an example, if you right-click the logo at the top of this README, copy the image address, paste it back into the address bar of your web browser and press `Enter`, the address would resolve to the following URL.
+
 ----
-. You can now edit the `readme.adoc` file to serve as a placeholder until the actual readme is ready to be published.
-+
-[source,asciidoc]
+https://raw.githubusercontent.com/JoeArauzo/Assets-Template/main/images/readme-logo.jpg
 ----
-= <Enter the Project Title>
-:doctype: article
-:description: <Enter a short description of the project>
-:license-type: <enter license type>
-:author: Author Name 
-:email: author.name@domain.com
-:revnumber: v0.1
-:revdate: 2021-01-01
+
+If we take a closer look at the URL, we can derive the following pattern.
+
 ----
-[TIP]
-The example listed above is only a starting point for customizing the readme. Take a close look at the lines within to ensure you replace all the placeholder values. For example, don't forget to modify the HTML code near the top of the readme which is used when displaying on GitHub.
-. Once your edits are complete, commit your changes and push to remote.
-+
+https://raw.githubusercontent.com/{github_user_name}/{repo_name}/{branch}/images/{asset_name}.{asset_extension}
+----
+
+It's as simple as that.  As a trial test, try copying your own image asset into the `images` directory, then run the following git commands to push the repo back to GitHub so the change takes effect.
+
 [source,bash]
 ----
 git add .
-git commit -m 'DOCS(readme):  set placeholder'
+git commit -m 'Add test image'
 git push
 ----
 
+Now point your browser at your GitHub repo and navigate to the `images` directory.
+Assuming you named your image asset `test-image.jpg`, click the *Download* button listed on the page to reveal the image asset URL in the address bar of your browser.
 
-=== Boilerplate Readme
-. Launch your terminal.
-. Change the current working directory to the location where you already cloned the repository.
-. *Copy & paste the following* into the terminal window and *hit* `Return`.
-+
-[source,bash]
+You should see something similar to the following.
+
 ----
-git checkout docs/readme-boilerplate
-git checkout -b docs/readme-draft
-----
-. You can now edit the `readme.adoc` file, customizing it for your specific project.
-. Once the readme is ready to be published, *copy & paste the following* into the terminal window and *hit* `Return`.
-+
-[source,bash]
-----
-git add .
-git commit -m 'DOCS(readme):  author draft'
-git push -u origin docs/readme-draft
-git checkout main
-git rm readme.adoc
-git clean -f .
-git commit -m 'DOCS(readme):  purge placeholder'
-git merge docs/readme-draft -m 'DOCS(readme):  publish draft' --allow-unrelated-histories
-git push
+https://raw.githubusercontent.com/JoeArauzo/Assets-Template/main/images/test-image.jpg
 ----
 
-
-For more AsciiDoc examples, please refer to the {documentation-url}[Documentation].
-
-
-== FAQ
-[qanda]
-Why this approach?::
-  Because...
-Could this be done better?::
-  Certainly...
-
-
-== Roadmap
-See the {repository-url}/issues[open issues] for a list of proposed features (and known issues).
-
-
-== Contributing
-. Clone repo and create a new branch: `$ git checkout {repository-url} -b name_for_new_branch`.
-. Make changes and test.
-. Submit Pull Request with comprehensive description of changes.
+You can now use this URL within your article to render the image inline.  Enjoy!
 
 
 == Change Log
 See link:CHANGELOG.adoc[CHANGELOG].
+
 
 == License
 Distributed under the {license-type} License. See `LICENSE` for more information.
@@ -331,3 +138,4 @@ Project Link: {repository-url}
 
 
 == Acknowledgements
+I'd like to acknowledge https://stackoverflow.com/users/10208226/krrish96[KRRISH96] for https://stackoverflow.com/questions/61537403/how-to-host-image-at-https-user-images-githubusercontent-com-path-filename[the answer he posted] regarding this topic on stackoverflow.com.
