@@ -57,20 +57,8 @@ _{description}_ +
 endif::[]
 
 
-== About the Project
-This repository provides a good foundation for establishing a README, written in AsciiDoc markup.  Documents written in AsciiDoc markup can be easily converted to HTML5, PDF, EPUB, and other formats.  Its syntax is similar to markdown, and includes extensive features and flexibility which make it suitable for writing high quality documentation.
-
-AsciiDoc is simply plain-text.  You can author documents in your favorite text editor of choice, such as https://code.visualstudio.com/[Visual Studio Code] with a proper https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode[extension], or any derivative of https://github.com/qvacua/vimr[VIM].  If you're just getting started with AsciiDoc, you may want to try https://asciidocfx.com/[AsciidocFX], until the markup syntax becomes second nature to you.
-
-[NOTE]
-This README template does not include dependencies on features, such as Shields.io, which require the repository to be a public repository.
-
-
-=== Built With
-//This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* https://asciidoctor.org/[Asciidoctor] - a _fast_ text processor and publishing toolchain for converting AsciiDoc content to other formats.
-* https://asciidocfx.com/[AsciidocFX] - a book / document editor to build PDF, Epub, Mobi and HTML books, documents, and slides.
-
+== Background
+A GitHub repository can be used to host assets, such as images. As an example, one use case is if you would like to includes images in an article, posted as a GitHub Gist. The gist can be written in any markup supported, such as AsciiDoc or markdown. The image you want to display within the article can be referenced in the markup via a URL. The following provides instructions for how to host your images on GitHub for free.
 
 == Getting Started
 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
